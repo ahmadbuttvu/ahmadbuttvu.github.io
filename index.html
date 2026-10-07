@@ -223,20 +223,32 @@
             padding: 25px;
             border-radius: 4px;
             transition: all 0.3s;
+            position: relative;
         }
 
-        .card:hover {
+        /* Clickable Card Styling */
+        .clickable-card {
+            cursor: pointer;
+        }
+        
+        .clickable-card:hover {
             border-color: var(--cyan-glow);
             transform: translateY(-5px);
             box-shadow: 0 10px 20px rgba(0, 229, 255, 0.1);
         }
         
-        .card:last-child {
+        .clickable-card:last-child {
             border-color: rgba(0, 255, 0, 0.4);
         }
-        .card:last-child:hover {
+        
+        .clickable-card:last-child:hover {
             border-color: var(--green-glow);
             box-shadow: 0 10px 20px rgba(0, 255, 0, 0.1);
+        }
+        
+        .clickable-card:hover .matric-badge {
+            background: rgba(0, 255, 0, 0.2);
+            box-shadow: 0 0 8px rgba(0, 255, 0, 0.4);
         }
 
         .card h3 {
@@ -254,6 +266,18 @@
             color: var(--text-muted);
             font-size: 0.85rem;
         }
+
+        .click-hint {
+            color: var(--cyan-glow);
+            font-size: 0.75rem;
+            margin-top: 15px;
+            opacity: 0.5;
+            transition: opacity 0.3s;
+        }
+
+        .clickable-card:hover .click-hint {
+            opacity: 1;
+        }
         
         .matric-badge {
             display: inline-block;
@@ -265,11 +289,6 @@
             font-size: 0.75rem;
             margin-top: 15px;
             transition: all 0.3s;
-        }
-
-        a .matric-badge:hover {
-            background: rgba(0, 255, 0, 0.2);
-            box-shadow: 0 0 8px rgba(0, 255, 0, 0.4);
         }
 
         /* Project Card */
@@ -443,21 +462,151 @@
         <h2 class="section-title">Verified_Credentials</h2>
         <div class="grid">
             <!-- Cert 1 -->
-            <div class="card">
+            <div class="card clickable-card" onclick="window.open('https://drive.proton.me/urls/VPR61WM4G4#mth6kmCnMfDu', '_blank')">
                 <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="var(--cyan-glow)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:10px;"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
                 <h3>CCNAv7</h3>
                 <div class="highlight">Introduction to Networks</div>
                 <div class="detail">Cisco Networking Academy</div>
+                <div class="click-hint">[ Click to View ]</div>
             </div>
             
             <!-- Cert 2 -->
-            <div class="card">
+            <div class="card clickable-card" onclick="window.open('https://drive.proton.me/urls/NJMYY2SH64#6uOYM3kBby0I', '_blank')">
                 <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="var(--cyan-glow)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:10px;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><circle cx="12" cy="11" r="3"></circle></svg>
                 <h3>Cyber Threat Management</h3>
                 <div class="highlight">ITU-DTC Pakistan</div>
                 <div class="detail">through Cisco Networking Academy program</div>
+                <div class="click-hint">[ Click to View ]</div>
             </div>
 
             <!-- Cert 3 -->
-            <div class="card">
-                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="var(--cyan-glow)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:10px;"><circle cx="12" cy="12" r="10"></circle><path d="M12
+            <div class="card clickable-card" onclick="window.open('https://drive.proton.me/urls/MNPBD11XEM#cxKp0IDfWxEc', '_blank')">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="var(--cyan-glow)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:10px;"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path><path d="M2 12h20"></path></svg>
+                <h3>Cisco Packet Tracer</h3>
+                <div class="highlight">Getting Started</div>
+                <div class="detail">Cisco Networking Academy</div>
+                <div class="click-hint">[ Click to View ]</div>
+            </div>
+
+            <!-- Cert 4 -->
+            <div class="card clickable-card" onclick="window.open('https://drive.proton.me/urls/W79592JSSM#zDiywiWDl22L', '_blank')">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="var(--cyan-glow)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:10px;"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                <h3>Introduction to Cybersecurity</h3>
+                <div class="highlight">Core Concepts</div>
+                <div class="detail">Security Fundamentals</div>
+                <div class="click-hint">[ Click to View ]</div>
+            </div>
+
+            <!-- Cert 5 -->
+            <div class="card clickable-card" onclick="window.open('https://drive.proton.me/urls/YZRETA0A1R#wHHGJTgA4Kgs', '_blank')">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="var(--cyan-glow)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:10px;"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                <h3>CPA - Programming</h3>
+                <div class="highlight">Essentials in C++</div>
+                <div class="detail">Programming Logic & Syntax</div>
+                <div class="click-hint">[ Click to View ]</div>
+            </div>
+
+            <!-- Cert 6 -->
+            <div class="card clickable-card" style="border-color: rgba(0, 255, 0, 0.4);" onclick="window.open('https://drive.proton.me/urls/YFR9M8W3SM#5vmHjODZvbVm', '_blank')">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="var(--green-glow)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:10px;"><path d="M2 12h20"></path><path d="M12 2v20"></path><circle cx="12" cy="12" r="10"></circle></svg>
+                <h3 style="color: var(--text-light);">PenTest Cyber Specialist</h3>
+                <div class="highlight">Specialist Program</div>
+                <div class="matric-badge">ID: EKR9769833 (Click to Verify)</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2 class="section-title">Active_Operations</h2>
+        <div class="project-card">
+            <div class="status-badge">STATUS: ACTIVE</div>
+            <h3>IntruSniff</h3>
+            <p>A network intrusion detection and packet sniffing utility designed to monitor network traffic, analyze payloads, and flag suspicious activities in real-time. Built to enhance network visibility and security posture.</p>
+            <div class="tags">
+                <span class="tag">Python</span>
+                <span class="tag">Scapy</span>
+                <span class="tag">Network Analysis</span>
+            </div>
+            <a href="https://github.com/ahmadbuttvu/intrusniff" target="_blank" class="btn btn-primary">[ VIEW PROGRAM ]</a>
+        </div>
+    </section>
+    
+    <section id="contact">
+        <h2 class="section-title">Establish_Connection</h2>
+        <div class="contact-grid">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span class="contact-label">[ EMAIL ]</span>
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=ahmadbuttvu@protonmail.com" target="_blank">ahmadbuttvu@protonmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-label">[ LINKEDIN ]</span>
+                    <a href="https://linkedin.com/in/ahmadbuttvu" target="_blank">linkedin.com/in/ahmadbuttvu</a>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-label">[ GITHUB ]</span>
+                    <a href="https://github.com/ahmadbuttvu" target="_blank">github.com/ahmadbuttvu</a>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-label">[ FACEBOOK ]</span>
+                    <a href="https://facebook.com/ahmadbuttvu" target="_blank">facebook.com/ahmadbuttvu</a>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-label">[ INSTAGRAM ]</span>
+                    <a href="https://instagram.com/ahmadbuttvu" target="_blank">@ahmadbuttvu</a>
+                </div>
+            </div>
+            <div class="terminal-box" style="margin-bottom: 0;">
+                <div class="term-text"><span class="term-prompt">ahmadbuttvu@kali</span>:~$ ./send_message.sh</div>
+                <div class="term-output">
+                    Initializing secure channel...<br>
+                    Awaiting input parameters.<br>
+                    <br>
+                    <span style="color: var(--text-muted)">// For encrypted comms, please use the provided email address.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p class="footer-quote">"There is no patch for human stupidity. Stay secure."</p>
+    </footer>
+
+    <script>
+        // Typewriter Effect
+        const textArray = ["Penetration Tester", "Cybersecurity Specialist", "Network Analyst"];
+        const typeDelay = 100;
+        const eraseDelay = 50;
+        const newTextDelay = 2000;
+        let textArrayIndex = 0;
+        let charIndex = 0;
+        const typedTextSpan = document.getElementById("typewriter");
+
+        function type() {
+            if (charIndex < textArray[textArrayIndex].length) {
+                typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
+                charIndex++;
+                setTimeout(type, typeDelay);
+            } else {
+                setTimeout(erase, newTextDelay);
+            }
+        }
+
+        function erase() {
+            if (charIndex > 0) {
+                typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex - 1);
+                charIndex--;
+                setTimeout(erase, eraseDelay);
+            } else {
+                textArrayIndex++;
+                if (textArrayIndex >= textArray.length) textArrayIndex = 0;
+                setTimeout(type, typeDelay + 1100);
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            setTimeout(type, newTextDelay + 250);
+        });
+    </script>
+</body>
+</html>
