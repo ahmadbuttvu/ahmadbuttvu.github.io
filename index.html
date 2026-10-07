@@ -38,8 +38,9 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px 50px;
-            background: rgba(5, 15, 20, 0.9);
+            background: rgba(5, 15, 20, 0.95);
             border-bottom: 1px solid var(--border-color);
+            box-shadow: 0 0 15px rgba(0, 229, 255, 0.1);
             position: sticky;
             top: 0;
             z-index: 100;
@@ -52,20 +53,21 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            text-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+            text-shadow: 0 0 10px var(--cyan-glow), 0 0 20px var(--cyan-glow);
         }
 
         .nav-links a {
             color: var(--text-light);
             text-decoration: none;
             margin-left: 30px;
-            font-size: 0.9rem;
-            transition: color 0.3s;
+            font-size: 0.95rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
         }
 
         .nav-links a:hover {
             color: var(--cyan-glow);
-            text-shadow: 0 0 8px rgba(0, 229, 255, 0.6);
+            text-shadow: 0 0 8px var(--cyan-glow);
         }
 
         /* Hero Section */
@@ -76,12 +78,13 @@
             justify-content: center;
             padding: 0 10%;
             position: relative;
-            background: radial-gradient(circle at center right, rgba(0,255,0,0.05) 0%, transparent 50%);
+            background: radial-gradient(circle at center right, rgba(0,255,0,0.08) 0%, transparent 60%);
         }
 
         .sys-login {
             color: var(--green-glow);
             margin-bottom: 15px;
+            text-shadow: 0 0 5px var(--green-glow);
         }
 
         .hero h1 {
@@ -92,7 +95,7 @@
 
         .hero h1 span {
             color: var(--cyan-glow);
-            text-shadow: 0 0 15px rgba(0, 229, 255, 0.6);
+            text-shadow: 0 0 10px rgba(0, 229, 255, 0.8), 0 0 25px rgba(0, 229, 255, 0.6), 0 0 40px rgba(0, 229, 255, 0.4);
         }
 
         .typing-container {
@@ -101,6 +104,7 @@
             font-size: 1.5rem;
             margin-bottom: 25px;
             color: var(--green-glow);
+            text-shadow: 0 0 5px var(--green-glow);
         }
 
         .cursor {
@@ -108,6 +112,7 @@
             width: 10px;
             height: 1.2em;
             background-color: var(--green-glow);
+            box-shadow: 0 0 8px var(--green-glow);
             animation: blink 1s step-end infinite;
             margin-left: 5px;
         }
@@ -120,6 +125,7 @@
             color: var(--text-muted);
             max-width: 600px;
             margin-bottom: 40px;
+            font-size: 1.1rem;
         }
 
         .btn-group {
@@ -128,12 +134,14 @@
         }
 
         .btn {
-            padding: 12px 24px;
-            background: transparent;
+            padding: 12px 25px;
+            background: rgba(0, 229, 255, 0.02);
             border: 1px solid var(--text-muted);
             color: var(--text-light);
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 1rem;
+            font-weight: bold;
+            letter-spacing: 1px;
             cursor: pointer;
             transition: all 0.3s;
             display: inline-block;
@@ -142,13 +150,16 @@
         .btn-primary {
             border-color: var(--cyan-glow);
             color: var(--cyan-glow);
+            box-shadow: 0 0 10px rgba(0, 229, 255, 0.2) inset, 0 0 10px rgba(0, 229, 255, 0.3);
+            text-shadow: 0 0 5px var(--cyan-glow);
         }
 
         .btn-primary:hover, .btn:hover {
-            background: rgba(0, 229, 255, 0.05);
-            box-shadow: 0 0 15px rgba(0, 229, 255, 0.2);
+            background: rgba(0, 229, 255, 0.15);
+            box-shadow: 0 0 15px rgba(0, 229, 255, 0.6) inset, 0 0 25px rgba(0, 229, 255, 0.6);
             border-color: var(--cyan-glow);
-            color: var(--cyan-glow);
+            color: #fff;
+            text-shadow: 0 0 8px #fff;
         }
 
         /* Section Global */
@@ -158,25 +169,27 @@
 
         .section-title {
             color: var(--cyan-glow);
-            font-size: 2rem;
+            font-size: 2.2rem;
             margin-bottom: 40px;
             display: flex;
             align-items: center;
             gap: 15px;
+            text-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
         }
 
         .section-title::before {
             content: '>';
             color: var(--green-glow);
+            text-shadow: 0 0 8px var(--green-glow);
         }
 
         /* Terminal About */
         .terminal-box {
             background: #03080b;
-            border: 1px solid #333;
+            border: 1px solid rgba(0, 255, 0, 0.2);
             border-radius: 5px;
-            padding: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            padding: 25px;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.05);
             margin-bottom: 40px;
         }
 
@@ -193,37 +206,48 @@
             height: 12px;
             border-radius: 50%;
         }
-        .dot.red { background: #ff5f56; }
-        .dot.yellow { background: #ffbd2e; }
-        .dot.green { background: #27c93f; }
+        .dot.red { background: #ff5f56; box-shadow: 0 0 5px #ff5f56; }
+        .dot.yellow { background: #ffbd2e; box-shadow: 0 0 5px #ffbd2e; }
+        .dot.green { background: #27c93f; box-shadow: 0 0 5px #27c93f; }
 
         .term-text {
             color: var(--green-glow);
             margin-bottom: 10px;
+            text-shadow: 0 0 3px var(--green-glow);
         }
         .term-output {
             color: var(--text-light);
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             padding-left: 20px;
         }
         .term-prompt {
             color: var(--cyan-glow);
+            text-shadow: 0 0 3px var(--cyan-glow);
         }
 
         /* Certifications Grid */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+            gap: 25px;
         }
 
         .card {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
-            padding: 25px;
-            border-radius: 4px;
-            transition: all 0.3s;
+            padding: 30px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             position: relative;
+        }
+        
+        .card svg {
+            filter: drop-shadow(0 0 5px var(--cyan-glow));
+        }
+
+        .card:last-child svg {
+            filter: drop-shadow(0 0 5px var(--green-glow));
         }
 
         /* Clickable Card Styling */
@@ -234,16 +258,16 @@
         .clickable-card:hover {
             border-color: var(--cyan-glow);
             transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 229, 255, 0.1);
+            box-shadow: 0 0 20px rgba(0, 229, 255, 0.2), 0 0 10px rgba(0, 229, 255, 0.1) inset;
         }
         
         .clickable-card:last-child {
-            border-color: rgba(0, 255, 0, 0.4);
+            border-color: rgba(0, 255, 0, 0.5);
         }
         
         .clickable-card:last-child:hover {
             border-color: var(--green-glow);
-            box-shadow: 0 10px 20px rgba(0, 255, 0, 0.1);
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.2), 0 0 10px rgba(0, 255, 0, 0.1) inset;
         }
         
         .clickable-card:hover .matric-badge {
@@ -252,14 +276,16 @@
         }
 
         .card h3 {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             margin: 15px 0 10px;
+            color: #fff;
         }
 
         .card .highlight {
             color: var(--green-glow);
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             margin-bottom: 10px;
+            text-shadow: 0 0 3px rgba(0, 255, 0, 0.5);
         }
 
         .card .detail {
@@ -281,61 +307,74 @@
         
         .matric-badge {
             display: inline-block;
-            border: 1px solid #1a4a28;
-            background: rgba(0, 255, 0, 0.05);
-            color: #27c93f;
-            padding: 4px 8px;
-            border-radius: 3px;
-            font-size: 0.75rem;
+            border: 1px solid var(--green-glow);
+            background: rgba(0, 255, 0, 0.1);
+            color: var(--green-glow);
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
             margin-top: 15px;
+            text-shadow: 0 0 5px rgba(0,255,0,0.5);
             transition: all 0.3s;
         }
 
         /* Project Card */
         .project-card {
             background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            padding: 30px;
-            border-radius: 4px;
+            border: 1px solid var(--cyan-glow);
+            padding: 35px;
+            border-radius: 5px;
             position: relative;
+            box-shadow: 0 0 15px rgba(0, 229, 255, 0.1);
+            transition: all 0.3s;
+        }
+
+        .project-card:hover {
+            box-shadow: 0 0 25px rgba(0, 229, 255, 0.2), 0 0 10px rgba(0, 229, 255, 0.1) inset;
         }
         
         .status-badge {
             position: absolute;
             top: 30px;
             right: 30px;
-            border: 1px solid rgba(0, 229, 255, 0.4);
+            border: 1px solid var(--cyan-glow);
             color: var(--cyan-glow);
-            padding: 4px 10px;
-            font-size: 0.75rem;
-            background: rgba(0, 229, 255, 0.05);
+            padding: 5px 12px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            background: rgba(0, 229, 255, 0.1);
+            text-shadow: 0 0 5px var(--cyan-glow);
+            box-shadow: 0 0 10px rgba(0, 229, 255, 0.2);
         }
 
         .project-card h3 {
-            font-size: 1.8rem;
+            font-size: 2rem;
             color: var(--cyan-glow);
             margin-bottom: 15px;
+            text-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
         }
 
         .project-card p {
             color: var(--text-muted);
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             max-width: 80%;
+            font-size: 1.05rem;
         }
 
         .tags {
             display: flex;
-            gap: 10px;
-            margin-bottom: 25px;
+            gap: 12px;
+            margin-bottom: 30px;
         }
 
         .tag {
             color: var(--green-glow);
-            font-size: 0.85rem;
-            border: 1px solid rgba(0, 255, 0, 0.3);
-            padding: 4px 8px;
-            border-radius: 3px;
-            background: rgba(0, 255, 0, 0.05);
+            font-size: 0.9rem;
+            border: 1px solid rgba(0, 255, 0, 0.5);
+            padding: 5px 10px;
+            border-radius: 4px;
+            background: rgba(0, 255, 0, 0.1);
+            text-shadow: 0 0 3px rgba(0, 255, 0, 0.5);
         }
         
         .tag::before {
@@ -352,11 +391,12 @@
         .contact-info {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
-            padding: 30px;
+            padding: 35px;
+            box-shadow: 0 0 15px rgba(0, 229, 255, 0.05);
         }
 
         .contact-item {
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             display: flex;
             align-items: center;
             gap: 15px;
@@ -365,25 +405,29 @@
         .contact-item a {
             color: var(--text-light);
             text-decoration: none;
-            transition: color 0.3s;
+            transition: all 0.3s;
+            font-size: 1.05rem;
         }
         
         .contact-item a:hover {
             color: var(--cyan-glow);
+            text-shadow: 0 0 8px var(--cyan-glow);
         }
 
         .contact-label {
             color: var(--cyan-glow);
-            min-width: 120px;
+            min-width: 130px;
             font-weight: bold;
+            text-shadow: 0 0 5px rgba(0, 229, 255, 0.3);
         }
 
         footer {
             text-align: center;
             padding: 30px;
-            border-top: 1px solid var(--border-color);
+            border-top: 1px solid rgba(0, 229, 255, 0.2);
             color: var(--text-muted);
             font-size: 0.9rem;
+            background: rgba(5, 15, 20, 0.9);
         }
 
         .footer-quote {
@@ -404,7 +448,7 @@
 
     <nav>
         <div class="logo">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
             </svg>
             ahmadbuttvu.me
@@ -459,11 +503,11 @@
     </section>
 
     <section id="certifications">
-        <h2 class="section-title">Verified_Credentials</h2>
+        <h2 class="section-title">Verified_Certificates</h2>
         <div class="grid">
             <!-- Cert 1 -->
             <div class="card clickable-card" onclick="window.open('https://drive.proton.me/urls/VPR61WM4G4#mth6kmCnMfDu', '_blank')">
-                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="var(--cyan-glow)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:10px;"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--cyan-glow)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:15px;"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
                 <h3>CCNAv7</h3>
                 <div class="highlight">Introduction to Networks</div>
                 <div class="detail">Cisco Networking Academy</div>
@@ -472,7 +516,7 @@
             
             <!-- Cert 2 -->
             <div class="card clickable-card" onclick="window.open('https://drive.proton.me/urls/NJMYY2SH64#6uOYM3kBby0I', '_blank')">
-                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="var(--cyan-glow)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:10px;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><circle cx="12" cy="11" r="3"></circle></svg>
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--cyan-glow)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:15px;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><circle cx="12" cy="11" r="3"></circle></svg>
                 <h3>Cyber Threat Management</h3>
                 <div class="highlight">ITU-DTC Pakistan</div>
                 <div class="detail">through Cisco Networking Academy program</div>
@@ -481,7 +525,7 @@
 
             <!-- Cert 3 -->
             <div class="card clickable-card" onclick="window.open('https://drive.proton.me/urls/MNPBD11XEM#cxKp0IDfWxEc', '_blank')">
-                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="var(--cyan-glow)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:10px;"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path><path d="M2 12h20"></path></svg>
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--cyan-glow)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:15px;"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path><path d="M2 12h20"></path></svg>
                 <h3>Cisco Packet Tracer</h3>
                 <div class="highlight">Getting Started</div>
                 <div class="detail">Cisco Networking Academy</div>
@@ -490,7 +534,7 @@
 
             <!-- Cert 4 -->
             <div class="card clickable-card" onclick="window.open('https://drive.proton.me/urls/W79592JSSM#zDiywiWDl22L', '_blank')">
-                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="var(--cyan-glow)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:10px;"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--cyan-glow)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:15px;"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
                 <h3>Introduction to Cybersecurity</h3>
                 <div class="highlight">Core Concepts</div>
                 <div class="detail">Security Fundamentals</div>
@@ -499,7 +543,7 @@
 
             <!-- Cert 5 -->
             <div class="card clickable-card" onclick="window.open('https://drive.proton.me/urls/YZRETA0A1R#wHHGJTgA4Kgs', '_blank')">
-                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="var(--cyan-glow)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:10px;"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--cyan-glow)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:15px;"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
                 <h3>CPA - Programming</h3>
                 <div class="highlight">Essentials in C++</div>
                 <div class="detail">Programming Logic & Syntax</div>
@@ -508,8 +552,8 @@
 
             <!-- Cert 6 -->
             <div class="card clickable-card" style="border-color: rgba(0, 255, 0, 0.4);" onclick="window.open('https://drive.proton.me/urls/YFR9M8W3SM#5vmHjODZvbVm', '_blank')">
-                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="var(--green-glow)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:10px;"><path d="M2 12h20"></path><path d="M12 2v20"></path><circle cx="12" cy="12" r="10"></circle></svg>
-                <h3 style="color: var(--text-light);">PenTest Cyber Specialist</h3>
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--green-glow)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:15px;"><path d="M2 12h20"></path><path d="M12 2v20"></path><circle cx="12" cy="12" r="10"></circle></svg>
+                <h3 style="color: #fff;">PenTest Cyber Specialist</h3>
                 <div class="highlight">Specialist Program</div>
                 <div class="matric-badge">ID: EKR9769833 (Click to Verify)</div>
             </div>
@@ -517,7 +561,7 @@
     </section>
 
     <section id="projects">
-        <h2 class="section-title">Active_Operations</h2>
+        <h2 class="section-title">Active_Projects</h2>
         <div class="project-card">
             <div class="status-badge">STATUS: ACTIVE</div>
             <h3>IntruSniff</h3>
@@ -569,12 +613,12 @@
     </section>
 
     <footer>
-        <p class="footer-quote">"There is no patch for human stupidity. Stay secure."</p>
+        <p class="footer-quote">"Building a safer digital future through proactive security."</p>
     </footer>
 
     <script>
         // Typewriter Effect
-        const textArray = ["Penetration Tester", "Cybersecurity Specialist", "Network Analyst"];
+        const textArray = ["Cybersecurity Specialist", "Penetration Tester", "Network Analyst"];
         const typeDelay = 100;
         const eraseDelay = 50;
         const newTextDelay = 2000;
