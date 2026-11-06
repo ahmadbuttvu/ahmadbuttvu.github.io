@@ -43,7 +43,6 @@
             overflow-x: hidden;
         }
 
-        /* Navigation */
         nav {
             display: flex;
             justify-content: space-between;
@@ -98,7 +97,6 @@
             box-shadow: 0 0 8px rgba(0, 229, 255, 0.2);
         }
 
-        /* Hero Section */
         .hero {
             min-height: 80vh;
             display: flex;
@@ -196,7 +194,6 @@
             text-shadow: 0 0 8px #fff;
         }
 
-        /* Section Global */
         section {
             padding: 80px 10%;
         }
@@ -219,7 +216,6 @@
             flex-shrink: 0;
         }
 
-        /* Terminal About */
         .terminal-box {
             background: #03080b;
             border: 1px solid rgba(0, 255, 0, 0.2);
@@ -264,7 +260,6 @@
             text-shadow: 0 0 3px var(--cyan-glow);
         }
 
-        /* Certifications Grid - Fixed 3 Columns on Desktop (3 Top, 3 Bottom) */
         .grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -285,7 +280,6 @@
             filter: drop-shadow(0 0 5px var(--cyan-glow));
         }
 
-        /* Clickable Card Styling */
         .clickable-card {
             cursor: pointer;
         }
@@ -345,7 +339,6 @@
             transition: all 0.3s;
         }
 
-        /* Project, Training & Case Cards */
         .projects-wrapper {
             display: flex;
             flex-direction: column;
@@ -486,7 +479,6 @@
             content: '> ';
         }
 
-        /* Contact Section */
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -546,7 +538,6 @@
             font-style: italic;
         }
 
-        /* Responsive Mobile & Tablet Layout */
         @media (max-width: 1024px) {
             .grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -554,6 +545,12 @@
         }
 
         @media (max-width: 960px) {
+            html {
+                -webkit-text-size-adjust: 100%;
+                text-size-adjust: 100%;
+                scroll-padding-top: 80px;
+            }
+
             nav {
                 padding: 15px 5%;
                 flex-wrap: wrap;
@@ -561,6 +558,7 @@
 
             .menu-toggle {
                 display: block;
+                padding: 10px 14px;
             }
 
             .nav-links {
@@ -572,6 +570,9 @@
                 margin-top: 15px;
                 border-top: 1px solid var(--border-color);
                 gap: 12px;
+                max-height: calc(100vh - 90px);
+                max-height: calc(100dvh - 90px);
+                overflow-y: auto;
             }
 
             .nav-links.active {
@@ -581,7 +582,7 @@
             .nav-links a {
                 margin-left: 0;
                 width: 100%;
-                padding: 5px 0;
+                padding: 10px 0;
             }
 
             .contact-grid {
@@ -604,8 +605,14 @@
                 font-size: 1.2rem;
             }
 
+            .sys-login {
+                font-size: 0.85rem;
+            }
+
             .hero h1 {
                 font-size: 2.2rem;
+                letter-spacing: 1px;
+                word-break: break-word;
             }
 
             .typing-container {
@@ -625,6 +632,7 @@
 
             .btn {
                 width: 100%;
+                padding: 14px 20px;
             }
 
             .section-title {
@@ -635,6 +643,10 @@
 
             .grid {
                 grid-template-columns: 1fr;
+            }
+
+            .card {
+                padding: 22px;
             }
 
             .terminal-box {
@@ -659,6 +671,19 @@
                 font-size: 0.95rem;
             }
 
+            .training-meta {
+                grid-template-columns: 1fr;
+                padding: 12px;
+            }
+
+            .meta-item {
+                word-break: break-word;
+            }
+
+            .tag {
+                font-size: 0.8rem;
+            }
+
             .status-badge {
                 position: relative;
                 top: 0;
@@ -681,6 +706,84 @@
 
             .contact-item a {
                 font-size: 0.95rem;
+            }
+        }
+
+        @media (hover: none) {
+            .clickable-card:hover {
+                transform: none;
+            }
+
+            .click-hint {
+                opacity: 0.9;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                padding: 12px 4%;
+            }
+
+            .logo {
+                font-size: 1rem;
+                gap: 6px;
+            }
+
+            .logo svg {
+                width: 22px;
+                height: 22px;
+            }
+
+            .hero h1 {
+                font-size: 1.9rem;
+            }
+
+            .typing-container {
+                font-size: 1rem;
+                min-height: 1.8rem;
+            }
+
+            .hero p {
+                font-size: 0.9rem;
+            }
+
+            .btn {
+                font-size: 0.9rem;
+                letter-spacing: 0.5px;
+            }
+
+            .section-title {
+                font-size: 1.2rem;
+            }
+
+            .terminal-box {
+                padding: 14px;
+                font-size: 0.85rem;
+            }
+
+            .term-output {
+                padding-left: 6px;
+                font-size: 0.82rem;
+            }
+
+            .project-card {
+                padding: 22px 16px;
+            }
+
+            .project-card h3 {
+                font-size: 1.25rem;
+            }
+
+            .project-card p {
+                font-size: 0.9rem;
+            }
+
+            .contact-item a {
+                font-size: 0.85rem;
+            }
+
+            footer p {
+                font-size: 0.8rem;
             }
         }
     </style>
@@ -749,7 +852,6 @@
     <section id="training">
         <h2 class="section-title">Active_Training</h2>
         <div class="projects-wrapper">
-            <!-- Training 1: PSEB Bootcamp -->
             <div class="project-card training-card">
                 <div class="status-badge enrolled">STATUS: ENROLLED</div>
                 <h3>Digital Forensic & Cyber Security</h3>
@@ -770,7 +872,6 @@
                 </div>
             </div>
 
-            <!-- Training 2: TryHackMe -->
             <div class="project-card training-card">
                 <div class="status-badge enrolled">STATUS: ACTIVE</div>
                 <h3>TryHackMe Cybersecurity Labs & CTF</h3>
@@ -796,7 +897,6 @@
     <section id="certifications">
         <h2 class="section-title">Verified_Certificates</h2>
         <div class="grid">
-            <!-- Cert 1 -->
             <div class="card clickable-card" onclick="window.open('https://drive.proton.me/urls/VPR61WM4G4#mth6kmCnMfDu', '_blank')">
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--cyan-glow)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:15px;"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
                 <h3>CCNAv7</h3>
@@ -805,7 +905,6 @@
                 <div class="click-hint">[ Click to View ]</div>
             </div>
             
-            <!-- Cert 2 -->
             <div class="card clickable-card" onclick="window.open('https://drive.proton.me/urls/NJMYY2SH64#6uOYM3kBby0I', '_blank')">
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--cyan-glow)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:15px;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><circle cx="12" cy="11" r="3"></circle></svg>
                 <h3>Cyber Threat Management</h3>
@@ -814,7 +913,6 @@
                 <div class="click-hint">[ Click to View ]</div>
             </div>
 
-            <!-- Cert 3 -->
             <div class="card clickable-card" onclick="window.open('https://drive.proton.me/urls/MNPBD11XEM#cxKp0IDfWxEc', '_blank')">
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--cyan-glow)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:15px;"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path><path d="M2 12h20"></path></svg>
                 <h3>Cisco Packet Tracer</h3>
@@ -823,7 +921,6 @@
                 <div class="click-hint">[ Click to View ]</div>
             </div>
 
-            <!-- Cert 4 -->
             <div class="card clickable-card" onclick="window.open('https://drive.proton.me/urls/W79592JSSM#zDiywiWDl22L', '_blank')">
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--cyan-glow)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:15px;"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
                 <h3>Introduction to Cybersecurity</h3>
@@ -832,7 +929,6 @@
                 <div class="click-hint">[ Click to View ]</div>
             </div>
 
-            <!-- Cert 5 -->
             <div class="card clickable-card" onclick="window.open('https://drive.proton.me/urls/YZRETA0A1R#wHHGJTgA4Kgs', '_blank')">
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--cyan-glow)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:15px;"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
                 <h3>CPA - Programming</h3>
@@ -841,7 +937,6 @@
                 <div class="click-hint">[ Click to View ]</div>
             </div>
 
-            <!-- Cert 6 -->
             <div class="card clickable-card" onclick="window.open('https://drive.proton.me/urls/YFR9M8W3SM#5vmHjODZvbVm', '_blank')">
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--cyan-glow)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:15px;"><path d="M2 12h20"></path><path d="M12 2v20"></path><circle cx="12" cy="12" r="10"></circle></svg>
                 <h3>PenTest Cyber Specialist</h3>
@@ -855,7 +950,6 @@
     <section id="projects">
         <h2 class="section-title">Active_Projects</h2>
         <div class="projects-wrapper">
-            <!-- Project 1: IntruSniff -->
             <div class="project-card">
                 <div class="status-badge">STATUS: ACTIVE</div>
                 <h3>IntruSniff</h3>
@@ -868,7 +962,6 @@
                 <a href="https://github.com/ahmadbuttvu/intrusniff" target="_blank" class="btn btn-primary">[ VIEW PROGRAM ]</a>
             </div>
 
-            <!-- Project 2: MapSploit -->
             <div class="project-card">
                 <div class="status-badge">STATUS: ACTIVE</div>
                 <h3>MapSploit</h3>
@@ -887,7 +980,6 @@
     <section id="pending-cases">
         <h2 class="section-title">Pending_Cases // PKCERT</h2>
         <div class="projects-wrapper">
-            <!-- Case 1 -->
             <div class="project-card pending-card">
                 <div class="status-badge pending">STATUS: PENDING REVIEW</div>
                 <h3>Case ID: PKC-CPVRO-26-1957</h3>
@@ -900,7 +992,6 @@
                 </div>
             </div>
 
-            <!-- Case 2 -->
             <div class="project-card pending-card">
                 <div class="status-badge pending">STATUS: PENDING REVIEW</div>
                 <h3>Case ID: PKC-CVRO-26-2084</h3>
@@ -957,7 +1048,6 @@
     </footer>
 
     <script>
-        // Mobile Menu Toggle
         function toggleMenu() {
             const navLinks = document.getElementById("navLinks");
             navLinks.classList.toggle("active");
@@ -968,7 +1058,6 @@
             navLinks.classList.remove("active");
         }
 
-        // Typewriter Effect
         const textArray = ["Cybersecurity Specialist", "Penetration Tester", "Network Analyst"];
         const typeDelay = 100;
         const eraseDelay = 50;
