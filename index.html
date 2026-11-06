@@ -70,7 +70,7 @@
         .nav-links a {
             color: var(--text-light);
             text-decoration: none;
-            margin-left: 30px;
+            margin-left: 25px;
             font-size: 0.95rem;
             font-weight: bold;
             transition: all 0.3s ease;
@@ -352,7 +352,7 @@
             transition: all 0.3s;
         }
 
-        /* Project & Case Cards */
+        /* Project, Training & Case Cards */
         .projects-wrapper {
             display: flex;
             flex-direction: column;
@@ -385,6 +385,24 @@
             background: rgba(0, 229, 255, 0.1);
             text-shadow: 0 0 5px var(--cyan-glow);
             box-shadow: 0 0 10px rgba(0, 229, 255, 0.2);
+        }
+
+        .status-badge.enrolled {
+            border-color: var(--green-glow);
+            color: var(--green-glow);
+            background: rgba(0, 255, 0, 0.1);
+            text-shadow: 0 0 5px var(--green-glow);
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.2);
+        }
+
+        .project-card.training-card {
+            border-color: rgba(0, 255, 0, 0.5);
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.05);
+        }
+
+        .project-card.training-card:hover {
+            border-color: var(--green-glow);
+            box-shadow: 0 0 25px rgba(0, 255, 0, 0.2), 0 0 10px rgba(0, 255, 0, 0.1) inset;
         }
 
         .status-badge.pending {
@@ -428,6 +446,27 @@
             font-size: 1.05rem;
         }
 
+        .training-meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 12px;
+            margin-bottom: 25px;
+            padding: 15px;
+            background: rgba(3, 8, 11, 0.6);
+            border: 1px solid rgba(0, 229, 255, 0.15);
+            border-radius: 4px;
+        }
+
+        .meta-item {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .meta-label {
+            color: var(--cyan-glow);
+            font-weight: bold;
+        }
+
         .tags {
             display: flex;
             flex-wrap: wrap;
@@ -435,7 +474,8 @@
             margin-bottom: 30px;
         }
 
-        .pending-card .tags {
+        .pending-card .tags,
+        .training-card .tags {
             margin-bottom: 0;
         }
 
@@ -514,7 +554,7 @@
         }
 
         /* Responsive Mobile Layout */
-        @media (max-width: 900px) {
+        @media (max-width: 960px) {
             nav {
                 padding: 15px 5%;
                 flex-wrap: wrap;
@@ -655,6 +695,7 @@
         <div class="nav-links" id="navLinks">
             <a href="#home" onclick="closeMenu()">_Home</a>
             <a href="#about" onclick="closeMenu()">_About</a>
+            <a href="#training" onclick="closeMenu()">_Training</a>
             <a href="#certifications" onclick="closeMenu()">_Certifications</a>
             <a href="#projects" onclick="closeMenu()">_Projects</a>
             <a href="#pending-cases" onclick="closeMenu()">_Pending_Cases</a>
@@ -699,6 +740,31 @@
             </div>
             
             <div class="term-text"><span class="term-prompt">ahmadbuttvu@kali</span>:~$ <span class="cursor" style="height: 1em;"></span></div>
+        </div>
+    </section>
+
+    <section id="training">
+        <h2 class="section-title">Active_Training // PSEB</h2>
+        <div class="projects-wrapper">
+            <div class="project-card training-card">
+                <div class="status-badge enrolled">STATUS: ENROLLED</div>
+                <h3>Digital Forensic & Cyber Security</h3>
+                <div class="case-subtitle">Pakistan Software Export Board (PSEB) | Cyber Security Trainee</div>
+                <p>Currently enrolled in an intensive, government-backed cybersecurity and digital forensics bootcamp focused on offensive security operations, incident response, threat hunting, and enterprise forensic investigation.</p>
+                
+                <div class="training-meta">
+                    <div class="meta-item"><span class="meta-label">Stream:</span> Cyber Security</div>
+                    <div class="meta-item"><span class="meta-label">Cohort:</span> PSEB-CYBER-LHR-01</div>
+                    <div class="meta-item"><span class="meta-label">Venue:</span> Quantum International PVT Ltd, Lahore</div>
+                    <div class="meta-item"><span class="meta-label">Duration:</span> Oct 2026 – Dec 2026</div>
+                </div>
+
+                <div class="tags">
+                    <span class="tag">Trainee ID: TRN-2026-001955</span>
+                    <span class="tag">Digital Forensics</span>
+                    <span class="tag">Cyber Security</span>
+                </div>
+            </div>
         </div>
     </section>
 
