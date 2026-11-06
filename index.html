@@ -280,10 +280,6 @@
             filter: drop-shadow(0 0 5px var(--cyan-glow));
         }
 
-        .card:last-child svg {
-            filter: drop-shadow(0 0 5px var(--green-glow));
-        }
-
         /* Clickable Card Styling */
         .clickable-card {
             cursor: pointer;
@@ -295,18 +291,11 @@
             box-shadow: 0 0 20px rgba(0, 229, 255, 0.2), 0 0 10px rgba(0, 229, 255, 0.1) inset;
         }
         
-        .clickable-card:last-child {
-            border-color: rgba(0, 255, 0, 0.5);
-        }
-        
-        .clickable-card:last-child:hover {
-            border-color: var(--green-glow);
-            box-shadow: 0 0 20px rgba(0, 255, 0, 0.2), 0 0 10px rgba(0, 255, 0, 0.1) inset;
-        }
-        
         .clickable-card:hover .matric-badge {
-            background: rgba(0, 255, 0, 0.2);
-            box-shadow: 0 0 8px rgba(0, 255, 0, 0.4);
+            background: rgba(0, 229, 255, 0.1);
+            border-color: var(--cyan-glow);
+            color: var(--cyan-glow);
+            box-shadow: 0 0 8px rgba(0, 229, 255, 0.4);
         }
 
         .card h3 {
@@ -341,14 +330,13 @@
         
         .matric-badge {
             display: inline-block;
-            border: 1px solid var(--green-glow);
-            background: rgba(0, 255, 0, 0.1);
-            color: var(--green-glow);
+            border: 1px solid var(--border-color);
+            background: rgba(0, 229, 255, 0.05);
+            color: var(--cyan-glow);
             padding: 5px 10px;
             border-radius: 4px;
             font-size: 0.8rem;
             margin-top: 15px;
-            text-shadow: 0 0 5px rgba(0,255,0,0.5);
             transition: all 0.3s;
         }
 
@@ -754,8 +742,9 @@
     </section>
 
     <section id="training">
-        <h2 class="section-title">Active_Training // PSEB</h2>
+        <h2 class="section-title">Active_Training</h2>
         <div class="projects-wrapper">
+            <!-- Training 1: PSEB Bootcamp -->
             <div class="project-card training-card">
                 <div class="status-badge enrolled">STATUS: ENROLLED</div>
                 <h3>Digital Forensic & Cyber Security</h3>
@@ -773,6 +762,27 @@
                     <span class="tag">Trainee ID: TRN-2026-001955</span>
                     <span class="tag">Digital Forensics</span>
                     <span class="tag">Cyber Security</span>
+                </div>
+            </div>
+
+            <!-- Training 2: TryHackMe -->
+            <div class="project-card training-card">
+                <div class="status-badge enrolled">STATUS: ACTIVE</div>
+                <h3>TryHackMe Cybersecurity Labs & CTF</h3>
+                <div class="case-subtitle">TryHackMe | Cybersecurity Trainee & CTF Player</div>
+                <p>Actively solving interactive cybersecurity labs, web penetration testing modules, and Capture the Flag (CTF) rooms to sharpen hands-on exploitation, enumeration, and defensive security skills.</p>
+                
+                <div class="training-meta">
+                    <div class="meta-item"><span class="meta-label">Platform:</span> TryHackMe</div>
+                    <div class="meta-item"><span class="meta-label">Role:</span> CTF Player & Security Trainee</div>
+                    <div class="meta-item"><span class="meta-label">Key Labs:</span> Complimentary, Speed Chatting, Tony the Tiger, Beach Bar, Enumeration, TryHack3M, Fools Mate</div>
+                    <div class="meta-item"><span class="meta-label">Focus:</span> Web Penetration Testing & Linux Enumeration</div>
+                </div>
+
+                <div class="tags">
+                    <span class="tag">CTF Challenges</span>
+                    <span class="tag">Privilege Escalation</span>
+                    <span class="tag">Web Security</span>
                 </div>
             </div>
         </div>
@@ -827,9 +837,9 @@
             </div>
 
             <!-- Cert 6 -->
-            <div class="card clickable-card" style="border-color: rgba(0, 255, 0, 0.4);" onclick="window.open('https://drive.proton.me/urls/YFR9M8W3SM#5vmHjODZvbVm', '_blank')">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--green-glow)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:15px;"><path d="M2 12h20"></path><path d="M12 2v20"></path><circle cx="12" cy="12" r="10"></circle></svg>
-                <h3 style="color: #fff;">PenTest Cyber Specialist</h3>
+            <div class="card clickable-card" onclick="window.open('https://drive.proton.me/urls/YFR9M8W3SM#5vmHjODZvbVm', '_blank')">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--cyan-glow)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:15px;"><path d="M2 12h20"></path><path d="M12 2v20"></path><circle cx="12" cy="12" r="10"></circle></svg>
+                <h3>PenTest Cyber Specialist</h3>
                 <div class="highlight">Specialist Program</div>
                 <div class="detail">NITSEP</div>
                 <div class="matric-badge">ID: EKR9769833 (Click to Verify)</div>
