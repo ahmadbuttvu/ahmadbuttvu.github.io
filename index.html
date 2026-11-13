@@ -14,7 +14,7 @@
     <!-- Same monospace font on every device (fixes laptop vs mobile font mismatch) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
 
     <style>
         :root {
@@ -26,7 +26,7 @@
             --text-light: #e0e0e0;
             --text-muted: #8892b0;
             --border-color: rgba(0, 229, 255, 0.2);
-            --font-mono: 'JetBrains Mono', 'Fira Code', Consolas, Menlo, 'DejaVu Sans Mono', 'Liberation Mono', monospace;
+            --font-mono: 'Courier Prime', 'Courier New', Courier, monospace;
         }
 
         * {
@@ -120,8 +120,18 @@
             justify-content: center;
             padding: 60px 10%;
             position: relative;
-            /* fades to 0 inside the box, so no visible hard edge */
-            background: radial-gradient(ellipse 60% 70% at 85% 50%, rgba(0,255,0,0.08) 0%, transparent 100%);
+        }
+
+        /* Green glow now lives on the whole page (fixed), so it never gets cut at the hero's bottom edge */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            pointer-events: none;
+            background:
+                radial-gradient(ellipse 70% 60% at 85% 35%, rgba(0, 255, 0, 0.10) 0%, transparent 100%),
+                radial-gradient(ellipse 60% 50% at 10% 90%, rgba(0, 229, 255, 0.05) 0%, transparent 100%);
         }
 
         .sys-login {
@@ -382,9 +392,11 @@
         }
 
         .status-badge {
-            position: absolute;
-            top: 30px;
-            right: 30px;
+            /* sits above the title instead of floating over it, so it never overlaps long headings */
+            position: relative;
+            display: inline-block;
+            margin-bottom: 18px;
+            line-height: 1.4;
             border: 1px solid var(--cyan-glow);
             color: var(--cyan-glow);
             padding: 5px 12px;
@@ -878,7 +890,6 @@
                 <div class="training-meta">
                     <div class="meta-item"><span class="meta-label">Stream:</span> Cyber Security</div>
                     <div class="meta-item"><span class="meta-label">Cohort:</span> PSEB-CYBER-LHR-01</div>
-                    <div class="meta-item"><span class="meta-label">Venue:</span> Quantum International PVT Ltd, Lahore</div>
                     <div class="meta-item"><span class="meta-label">Duration:</span> Oct 2026 – Dec 2026</div>
                 </div>
 
